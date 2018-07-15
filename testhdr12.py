@@ -6,10 +6,13 @@ import matplotlib.image as mping
 # Loading exposure images into a list
 img_fn = ["/home/pi/Desktop/img01.jpg", "/home/pi/Desktop/img02.jpg", "/home/pi/Desktop/img03.jpg", "/home/pi/Desktop/img04.jpg"]
 
+filename="expfile.npy"
 
 img_list = [cv2.imread(fn) for fn in img_fn]
-exposure_times = np.array([0.0001, 0.001, 0.01, 0.3], dtype=np.float32)
-print ("test")
+exposure_times=np.load(filename)
+
+#exposure_times = np.array([0.1, 1.0, 4.0, 8.0], dtype=np.float32)
+print (exposure_times)
 
 
 # Merge exposures to HDR image
